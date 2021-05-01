@@ -1,0 +1,10 @@
+<!-- Table -->
+<div class="center w-100 mb5">
+<h2 class="center mt3 tc f2 b lh-title mb3">{{.heading}}</h2>
+<p class="center tc">{{.date}}</p>
+<table class= "tl ba center bg-grey-1 b--grey-2">
+    {{ range .rows}}
+        {{ partial "enkeltrad" . }}
+    {{ end }}
+</table>
+</div>

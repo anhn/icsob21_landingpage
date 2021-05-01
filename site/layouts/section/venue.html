@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{ partial "short-text" .Params.Location}}
+<div class="flex-ns">
+<div class="block w-100 center">
+<div class="pv1"></div>
+{{ partial "textblock" .Params.Venue}}
+
+<div class="center mv3 pv1 mw7 tc">
+<iframe class="center justify-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.3392474841144!2d10.191447816216648!3d59.74380558476241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4641234a325e38bd%3A0x97804c3d2afbd62a!2sUniversitetet%20i%20S%C3%B8r%C3%B8st-Norge!5e0!3m2!1sno!2sno!4v1619533967317!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+{{ partial "textblock_link_end" .Params.Venue_sub}}
+
+<div class="ma4"></div>
+{{ partial "textblock" .Params.Travel_Header}}
+<div class="center pv1 mw6">
+  <img src="{{.Params.reisebilde}}" alt="{{.Params.bildetekst}}">
+</div>
+{{ partial "textblock" .Params.Travel_content}}
+
+
+<div class="ma4 mw6 center ph3 pt4">
+{{ partial "textblock" .Params.Acom_Header}}
+
+<div>
+  {{ range $element := .Params.Hoteller }}
+    {{ partial "media-block link" $element }}
+  {{ end }}
+</div>
+
+</div>
+</div>
+
+<div class="mt3 mb3 right-0">
+  <a class="twitter-timeline" data-width="350" data-height="800" data-dnt="true" href="https://twitter.com/ICSOBconf?ref_src=twsrc%5Etfw">Tweets by ICSOBconf</a>
+  <script async src="https://platform.twitter.com/widgets.js" 
+  charset="utf-8"></script>
+</div>  
+</div>
+
+{{ end }} 

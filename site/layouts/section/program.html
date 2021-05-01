@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+
+{{ partial "short-text" .Params.Location}}
+<div class="flex-ns">
+<div class="center w-100 block">
+<!-- Main Content -->
+{{ range $element := .Params.program }}
+    {{ partial "tabell" $element}}
+{{ end }}
+
+</div>
+<div class="mt3 mb3 right-0">
+    <a class="twitter-timeline" data-width="350" data-height="800" data-dnt="true" href="https://twitter.com/ICSOBconf?ref_src=twsrc%5Etfw">Tweets by ICSOBconf</a>
+    <script async src="https://platform.twitter.com/widgets.js" 
+    charset="utf-8"></script>
+</div>  
+</div>
+{{ end }}

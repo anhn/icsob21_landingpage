@@ -1,0 +1,179 @@
+backend:
+  name: git-gateway
+
+media_folder: "site/static/img" # Folder where user uploaded files should go
+public_folder: "img"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "site/content/_index.md"
+        label: "Index"
+        name: "index"
+        fields:
+          - {lable: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Textbar"
+            name: "blurb"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "site/content/registration/_index.md"
+        label: "Registration"
+        name: "registration"
+        fields:
+          - {lable: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Textbar"
+            name: "textbar"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "site/content/callforpapers/_index.md"
+        label: "Call for papers"
+        name: "callforpapers"
+        fields:
+          - {lable: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Textbar"
+            name: "textbar"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "site/content/keynote/_index.md"
+        label: "Keynote"
+        name: "keynote"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Intro"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: string, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - label: "Speakers"
+            name: "speakers"
+            widget: "list"
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Text, name: text, widget: text}
+              - {label: ImageUrl, name: imageUrl, widget: image}
+              - {label: Bildetekst, name: bildetekst, widget: text}
+              - {label: Ingress, name: ingress, widget: text}
+      - file: "site/content/committee/_index.md"
+        label: "Committee"
+        name: "committee"
+        fields:
+          - {lable: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Textbar"
+            name: "Location"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - label: "Committee"
+            name: "committee"
+            widget: "list"
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - label: "Committee members"
+                name: "committee_member"
+                widget: "list"
+                fields:
+                  - {label: Heading, name: heading, widget: string}
+                  - {label: Text, name: text, widget: text}
+                  - {label: ImageUrl, name: imageUrl, widget: image}
+      - file: "site/content/venue/_index.md"
+        label: Venue
+        name: venue
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - {label: Image, name: image, widget: image}
+          - label: "Textbar"
+            name: "Location"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - label: "Venue - Over kart"
+            name: "Venue"
+            widget: "object"
+            fields:
+              - {label: Heading, name: Heading, widget: text}
+              - {label: Text, name: Innhold, widget: text}
+          - label: "Venue - Under kart"
+            name: "Venue_sub"
+            widget: "object"
+            fields:
+              - {label: Text, name: Innhold, widget: text}
+              - {label: Link, name: link, widget: string}
+              - {label: UrlName, name: urlName, widget: text}
+          - label: "Travel Title"
+            name: "Travel_Header"
+            widget: "object"
+            fields:
+              - {label: Title, name: Heading, widget: text}
+          - {label: Reisebilde, name: reisebilde, widget: image}
+          - {label: Bildetekst, name: bildetekst, widget: string}
+          - label: "Travel"
+            name: "Travel_content"
+            widget: "object"
+            fields:
+              - {label: Text, name: Innhold, widget: text}
+          - label: "Acommendation Header"
+            name: "Acom_Header"
+            widget: "object"
+            fields:
+              - {label: Heading, name: Heading, widget: text}
+          - label: "Hoteller"
+            name: "Hoteller"
+            widget: "list"
+            fields:
+              - {label: URL, name: imageUrl, widget: image}
+              - {label: Bildetekst, name: bildetekst, widget: text}
+              - {label: Heading, name: heading, widget: text}
+              - {label: Text, name: text, widget: text}
+              - {label: Link, name: link, widget: string}
+              - {label: Lenketekst, name: lenketekst, widget: text}
+      - file: "site/content/program/_index.md"
+        label: Program
+        name: program
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string, required: false}
+          - label: "Textbar"
+            name: "Location"
+            widget: "object"
+            fields:
+              - {label: Heading, name: heading, widget: text, required: false}
+              - {label: Text, name: text, widget: text, required: false}
+          - label: Program
+            name: program
+            widget: "list"
+            fields:
+              - {label: Heading, name: heading, widget: text}
+              - {label: Text, name: date, widget: string}
+              - label: Row
+                name: rows  
+                widget: "list"
+                fields:
+                  - label: Column
+                    name: column
+                    widget: "list"
+                    fields:
+                      - {label: Text, name: column_content, widget: string}
